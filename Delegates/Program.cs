@@ -10,6 +10,10 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
+            var photoProcessor = new PhotoProcessor();
+            photoProcessor.Processor("C:\\image1.png");
+
+            Console.ReadKey();
         }
     }
 }
