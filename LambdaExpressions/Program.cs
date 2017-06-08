@@ -22,7 +22,8 @@ namespace LambdaExpressions
 
             var books = new BookRepository().GetBooks();
 
-            var cheaperBooks = books.FindAll(IsBookCheaperThan10);
+            //var cheaperBooks = books.FindAll(IsBookCheaperThan10);
+            var cheaperBooks = books.FindAll(b => b.Price < 10);
 
             foreach (var book in cheaperBooks)
             {
@@ -33,10 +34,10 @@ namespace LambdaExpressions
         }
 
         // Predicate method
-        static bool IsBookCheaperThan10(Book book)
-        {
-            return book.Price < 10;
-        }
+        //static bool IsBookCheaperThan10(Book book)
+        //{
+        //    return book.Price < 10;
+        //}
 
         //static int Square(int number)
         //{
