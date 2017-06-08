@@ -20,7 +20,22 @@ namespace LambdaExpressions
             //Console.WriteLine(Square(4));
             Console.WriteLine(square(3));
 
+            var books = new BookRepository().GetBooks();
+
+            var cheaperBooks = books.FindAll(IsBookCheaperThan10);
+
+            foreach (var book in cheaperBooks)
+            {
+                Console.WriteLine(book.Title);
+            }
+
             Console.ReadKey();
+        }
+
+        // Predicate method
+        static bool IsBookCheaperThan10(Book book)
+        {
+            return book.Price < 10;
         }
 
         //static int Square(int number)
