@@ -14,8 +14,8 @@ namespace ExtensionMethods
             Console.WriteLine(text.Shorten(5));
 
             // We often using extension methods instead of creating them
-            IEnumerable<int> numbers = new List<int>();
-            numbers.Max();
+            IEnumerable<int> numbers = new List<int>() { 11, 4, 5, 54, 20 };
+            var maxNumber = numbers.Max();
 
             Console.ReadKey();
         }
