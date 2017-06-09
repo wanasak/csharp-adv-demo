@@ -8,5 +8,9 @@ namespace Events
         {
             Console.WriteLine("Sending Mail...");
         }
+        public void OnVideoEncoded(object source, EventArgs args)
+        {
+            Console.WriteLine("Sending Mail...");
+        }
     }
 }
