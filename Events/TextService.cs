@@ -8,9 +8,9 @@ namespace Events
         {
             Console.WriteLine("Sending Text...");
         }
-        public void OnVideoEncoded(object source, EventArgs args)
+        public void OnVideoEncoded(object source, VideoEventArgs args)
         {
-            Console.WriteLine("Sending Text...");
+            Console.WriteLine("Sending Text... " + args.Video.Title);
         }
     }
 }

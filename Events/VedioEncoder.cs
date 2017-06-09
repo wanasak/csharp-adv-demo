@@ -3,6 +3,10 @@ using System.Threading;
 
 namespace Events
 {
+    public class VideoEventArgs
+    {
+        public Video Video { get; set; }
+    }
     public class VideoEncoder
     {
         //private MailService _mailService;
@@ -11,7 +15,7 @@ namespace Events
         // 1- Define a delegate
         // 2- Define an event based on that delegate
         // 3- Raise the event
-        public delegate void VideoEncodedEventHandler(object source, EventArgs args);
+        public delegate void VideoEncodedEventHandler(object source, VideoEventArgs args);
         public event VideoEncodedEventHandler VideoEncoded;
 
         //public VideoEncoder()
@@ -27,12 +31,12 @@ namespace Events
             //_textService.Send();
             //_mailService.Send();
 
-            OnVideoEncoded();
+            OnVideoEncoded(video);
         }
-        protected virtual void OnVideoEncoded()
+        protected virtual void OnVideoEncoded(Video video)
         {
             if (VideoEncoded != null)
-                VideoEncoded(this, EventArgs.Empty);
+                VideoEncoded(this, new VideoEventArgs { Video = video });
         }
     }
 }
